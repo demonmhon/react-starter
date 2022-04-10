@@ -1,0 +1,129 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
+
+label,
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/**
+ * App header
+ */
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  font-size: 1rem;
+}
+
+.app-header a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.app-header ul {
+  display: block;
+}
+
+.app-header li {
+  position: relative;
+  display: inline-block;
+}
+
+.app-header ul,
+.app-header li {
+  margin: 0;
+  padding: 0;
+}
+
+.app-main-nav {
+  flex: 1;
+}
+
+.app-main-nav li + li {
+  margin-left: 15px;
+}
+
+.app-main-nav li::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  border-bottom: solid 1px currentColor;
+  content: '';
+}
+
+.app-main-nav li.active::after {
+  display: block;
+}
+
+.app-main-nav li + li {
+  position: relative;
+  display: inline-block;
+}
+
+.app-header-logo {
+  display: inline-block;
+  margin-right: 15px;
+}
+.app-header-logo img {
+  width: auto;
+  height: 32px;
+}
+
+/**
+ * App container
+ */
+#app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/**
+ * App page
+ */
+.app-page {
+  flex: 1;
+  background-color: #f5f5f5;
+}
+
+.app-page-blank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-page-blank span {
+  display: block;
+  color: #ccc;
+  font-size: 2rem;
+}
