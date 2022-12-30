@@ -22,11 +22,6 @@ module.exports = {
           { loader: 'css-loader' },
           { loader: 'postcss-loader' },
         ],
-      },{
-        test: /\.css$/,
-        use: [
-          { loader: 'css-loader' },
-        ],
       },
       {
         test: /\.(js|jsx)$/,
