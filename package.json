@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production webpack --config=config/webpack.prod.js",
     "build:serve": "npm run build && npm run start",
     "prettier": "prettier --check \"src/**/*.(js|jsx|css)\"",
-    "prettier:write": "prettier --check \"src/**/*.(js|jsx|css)\" --write",
+    "format": "prettier --check \"src/**/*.(js|jsx|css)\" --write",
     "lint": "eslint -c .eslintrc --ext .js \"src/**/*.{js,jsx}\"",
     "start": "node server.js",
     "start:dev": "cross-env NODE_ENV=development webpack serve --config=config/webpack.dev.js",
