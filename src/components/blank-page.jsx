@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BlankPage = (props) => {
-  const { title } = props;
+  const { title, children } = props;
   return (
     <div className={`app-page app-page-blank`}>
-      <span>{title}</span>
+      <span className="title">{title}</span>
+      {children}
     </div>
   );
 };

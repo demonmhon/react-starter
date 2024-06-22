@@ -1,9 +1,11 @@
 import React from 'react';
 
 import { BlankPage } from '@components';
+import { useAppConfigContext } from '@contexts/app-config';
 
 const AccountPage = (props) => {
-  return <BlankPage title={`Account`} />;
+  const appConfig = useAppConfigContext();
+  return <BlankPage title={`Account`}></BlankPage>;
 };
 
 AccountPage.propTypes = {};

@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Route from './route';
 import { Header } from '@components';
+import { AppConfigContextProvider } from '@contexts/app-config';
 
 const App = (props) => {
   useEffect(() => {
@@ -12,10 +13,12 @@ const App = (props) => {
 
   return (
     <BrowserRouter>
-      <div id="app-container">
-        <Header />
-        <Route />
-      </div>
+      <AppConfigContextProvider>
+        <div id="app-container">
+          <Header />
+          <Route />
+        </div>
+      </AppConfigContextProvider>
     </BrowserRouter>
   );
 };

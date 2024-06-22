@@ -118,11 +118,12 @@ textarea {
 
 .app-page-blank {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.app-page-blank span {
+.app-page-blank .title {
   display: block;
   color: #ccc;
   font-size: 2rem;
