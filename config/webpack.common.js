@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, '../src', 'index.js'),
+    main: path.resolve(__dirname, '../src', 'index.jsx'),
   },
   output: {
     filename: '[name].[fullhash].js',
@@ -87,10 +87,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@assets': path.resolve(__dirname, '../src/assets/'),
-      '@components': path.resolve(__dirname, '../src/components/'),
-      '@contexts': path.resolve(__dirname, '../src/contexts/'),
-      '@core': path.resolve(__dirname, '../src/core/'),
+      'src': path.resolve(__dirname, '../src/'),
     },
     extensions: ['.js', '.jsx'],
   },

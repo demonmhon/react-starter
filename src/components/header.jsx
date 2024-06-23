@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
-import logo from '@assets/logo.png';
+import logo from 'src/assets/logo.png';
 
 const Header = (props) => {
   const { pathname } = useLocation();

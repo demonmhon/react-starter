@@ -1,7 +1,7 @@
 import React from 'react';
 
 import LoginIcon from '../assets/icons/user.svg';
-import { BlankPage } from '@components';
+import { BlankPage } from 'src/components';
 
 const LoginPage = (props) => {
   return <BlankPage title={`Please login`} />;

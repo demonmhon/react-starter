@@ -7,9 +7,6 @@ import { AppRoute } from './route';
 
 // app.test.js
 it('Render home page', () => {
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-
   render(<AppRoute />, { wrapper: MemoryRouter });
 
   expect(screen.getByText(/React 17x Starter/i)).toBeInTheDocument();

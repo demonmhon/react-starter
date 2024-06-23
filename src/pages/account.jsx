@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { BlankPage } from '@components';
-import { useAppConfigContext } from '@contexts/app-config';
+import { BlankPage } from 'src/components';
+import { useAppConfigContext } from 'src/contexts/app-config';
 
 const AccountPage = (props) => {
   const appConfig = useAppConfigContext();
