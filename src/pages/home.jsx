@@ -7,7 +7,7 @@ const propTypes = {};
 const defaultProps = {};
 
 const HomePage = (props) => {
-  return <BlankPage title={`React 17x Starter`} />;
+  return <BlankPage title={`React 18x Starter`} />;
 };
 
 HomePage.propTypes = propTypes;

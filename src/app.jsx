@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { BrowserRouter } from 'react-router-dom';
 
 import Route from './route';
-import { Header } from 'src/components';
 import { AppConfigContextProvider } from 'src/contexts/app-config';
 
 const App = (props) => {
@@ -14,10 +13,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <AppConfigContextProvider>
-        <div id="app-container">
-          <Header />
-          <Route />
-        </div>
+        <Route />
       </AppConfigContextProvider>
     </BrowserRouter>
   );

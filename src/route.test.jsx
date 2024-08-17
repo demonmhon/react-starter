@@ -9,5 +9,5 @@ import { AppRoute } from './route';
 it('Render home page', () => {
   render(<AppRoute />, { wrapper: MemoryRouter });
 
-  expect(screen.getByText(/React 17x Starter/i)).toBeInTheDocument();
+  expect(screen.getByText(/React 18x Starter/i)).toBeInTheDocument();
 });
