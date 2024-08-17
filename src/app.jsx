@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter } from 'react-router-dom';
 
 import Route from './route';
 import { AppConfigContextProvider } from 'src/contexts/app-config';
@@ -11,11 +10,9 @@ const App = (props) => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <AppConfigContextProvider>
-        <Route />
-      </AppConfigContextProvider>
-    </BrowserRouter>
+    <AppConfigContextProvider>
+      <Route />
+    </AppConfigContextProvider>
   );
 };
 

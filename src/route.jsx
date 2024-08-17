@@ -1,10 +1,10 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Layout from './pages/layout';
 import Pages from './pages';
 
-const AppRoute = () => {
+const AppRouter = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
@@ -18,6 +18,14 @@ const AppRoute = () => {
   );
 };
 
-export { AppRoute };
+const AppBrowserRouter = () => {
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
+};
 
-export default AppRoute;
+export { AppRouter, AppBrowserRouter };
+
+export default AppBrowserRouter;
