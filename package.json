@@ -15,7 +15,8 @@
     "prettier:write": "prettier --check \"src/**/*.(js|jsx|css)\" --write",
     "lint": "eslint -c .eslintrc --ext .js \"src/**/*.{js,jsx}\"",
     "dev": "cross-env NODE_ENV=development webpack serve --config=config/webpack.dev.js",
-    "start": "node server.js",
+    "start": "npm run dev",
+    "serve": "node server.js",
     "analyze": "webpack --config=config/webpack.prod.js --profile --json > webpack-bundle-analyzer/stats.json && webpack-bundle-analyzer webpack-bundle-analyzer/stats.json",
     "prepare": "husky install",
     "pretest": "npm run prettier",
@@ -74,6 +75,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "i18next": "^24.2.1",
+    "react-i18next": "^15.4.0"
   }
 }
