@@ -23,3 +23,4 @@ export const AppConfigContextProvider = ({ children }) => {
 };
 
 export const useAppConfigContext = () => useContext(AppConfigContext);
+export default AppConfigContextProvider;
