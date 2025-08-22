@@ -25,5 +25,5 @@ jest.mock('react-i18next', () => ({
 it('Render home page', () => {
   render(<AppRouter />, { wrapper: MemoryRouter });
 
-  expect(screen.getByText(/React 18x Starter/i)).toBeInTheDocument();
+  expect(screen.getByText(/React 19x Starter/i)).toBeInTheDocument();
 });
