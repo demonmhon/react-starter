@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { BlankPage } from 'src/components';
 import Cookies from 'js-cookie';
 
 const Login = () => {
@@ -19,7 +18,9 @@ const Login = () => {
   };
 
   return (
-    <BlankPage title={`Login`}>
+    <div>
+      <h1>Login</h1>
+      <p>You can enter any username/password to log in.</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -33,7 +34,7 @@ const Login = () => {
         <br />
         <button type="submit">Submit</button>
       </form>
-    </BlankPage>
+    </div>
   );
 };
 

@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Cookies from 'js-cookie';
 
 import logo from 'src/assets/logo.png';
 
 const Header = (props) => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
+  const isLoggedIn = Cookies.get('isLoggedIn');
 
   return (
     <header className={`app-header`}>
@@ -26,7 +28,9 @@ const Header = (props) => {
       </ul>
       <ul className={`app-main-menu`}>
         <li className={pathname === '/account' ? 'active' : null}>
-          <Link to="/account">{t('navigation.account')}</Link>
+          <Link to="/account">
+            {t(isLoggedIn ? 'navigation.account' : 'navigation.login')}
+          </Link>
         </li>
       </ul>
     </header>

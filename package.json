@@ -58,6 +58,7 @@
     "i18next-http-backend": "^3.0.2",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
+    "js-cookie": "^3.0.5",
     "mini-css-extract-plugin": "^2.9.4",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^10.2.4",
