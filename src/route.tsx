@@ -11,6 +11,7 @@ const AppRouter = () => {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Pages.Home />} />
+        <Route path="/about" element={<Pages.About />} />
         <Route
           path="/login"
           element={
