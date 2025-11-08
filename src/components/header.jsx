@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Cookies from 'js-cookie';
 
-import logo from 'src/assets/logo.png';
+import logo from '../assets/logo.png';
 
 const Header = (props) => {
   const { pathname } = useLocation();
@@ -37,11 +37,6 @@ const Header = (props) => {
   );
 };
 
-Header.propTypes = {
-  match: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
-};
 Header.defaultProps = {
   match: {},
   location: {},

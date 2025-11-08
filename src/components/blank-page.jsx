@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const BlankPage = (props) => {
   const { title, children } = props;
@@ -11,9 +10,6 @@ const BlankPage = (props) => {
   );
 };
 
-BlankPage.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 BlankPage.defaultProps = {
   title: '',
 };

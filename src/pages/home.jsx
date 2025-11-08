@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlankPage } from 'src/components';
+import { BlankPage } from '../components';
 
 const propTypes = {};
 

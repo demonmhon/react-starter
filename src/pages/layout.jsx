@@ -4,8 +4,8 @@ import { Outlet } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
-import { Header } from 'src/components';
-import { useAppConfigContext } from 'src/contexts/app-config';
+import { Header } from '../components';
+import { useAppConfigContext } from '../contexts/app-config';
 
 const Layout = (props) => {
   const { i18n } = useTranslation();

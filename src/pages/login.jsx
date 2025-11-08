@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { BlankPage } from 'src/components';
+import { BlankPage } from '../components';
 import Cookies from 'js-cookie';
 
 const Login = () => {
