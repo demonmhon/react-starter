@@ -4,5 +4,11 @@
     "about": "เกี่ยวกับ",
     "login": "ล็อกอิน",
     "account": "บัญชี"
+  },
+  "account": {
+    "fieldUsername": "Username",
+    "fieldPassword": "Password",
+    "buttonLogin": "Login",
+    "buttonLogout": "Logout"
   }
 }

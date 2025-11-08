@@ -1,20 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
-import Route from './route';
-import { AppConfigContextProvider } from './contexts/app-config';
+import Route from './route'
+import { AppConfigContextProvider } from './contexts/app-config'
+import { AuthProvider } from './contexts/auth-context'
 
 const App = () => {
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, [])
 
   return (
     <AppConfigContextProvider>
-      <Route />
+      <AuthProvider>
+        <Route />
+      </AuthProvider>
     </AppConfigContextProvider>
-  );
-};
+  )
+}
 
-export { App };
+export { App }
 
-export default App;
+export default App

@@ -1,13 +1,13 @@
-import axios from 'axios';
-import { getConfig } from './config';
+import axios from 'axios'
+import { getConfig } from './config'
 
 const getBaseURL = () => {
-  const { api } = getConfig();
-  const { baseURL, version } = api;
-  const v = version ? `/${version}` : '';
+  const { api } = getConfig()
+  const { baseURL, version } = api
+  const v = version ? `/${version}` : ''
 
-  return `${baseURL}${v}`;
-};
+  return `${baseURL}${v}`
+}
 
 export default {
   async getHealth() {
@@ -18,6 +18,6 @@ export default {
         url: '/health',
       })
       .then((response) => response.data)
-      .catch(() => null);
+      .catch(() => null)
   },
-};
+}
