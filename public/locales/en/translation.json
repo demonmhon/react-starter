@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "login": "Login",
+    "account": "Account"
+  },
+  "account": {
+    "fieldUsername": "Username",
+    "fieldPassword": "Password",
+    "buttonLogin": "Login",
+    "buttonLogout": "Logout"
+  }
+}

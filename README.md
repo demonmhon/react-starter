@@ -1,56 +1,75 @@
-# react-17x-starter
+# React + TypeScript + Vite
 
-The react 17x starter.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Getting started
+Currently, two official plugins are available:
 
-For development, set your environment variables in `.env.development`, update all variables with correct values
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-```bash
-$ cp .env.example .env.development
+## React Compiler
+
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+
+Note: This will impact Vite dev & build performances.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-> `.env.development` is for local development, it ignored by git.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Install dependencies
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-```bash
-$ npm install
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-The start the development server (webpack) with
-
-```bash
-$ npm start:dev
-```
-
-
-## Scripts
-
-| Script | Description |
-|-|-|
-| `start` | Serve the built app from `dist`, (must build first) |
-| `start:dev` | Start the app with `development` mode, `webpack-dev-server` and hot module replacement (HMR) enabled |
-| `test` | Jest and execute all the tests |
-| `test:coverage` | Generate a coverage report |
-| `test:watch` | Run all the tests and keep on watch mode |
-| `build` | Build the production build |
-| `analyze` | Run `webpack-bundle-analyzer` to visualize size of webpack output files |
-
-## Build Docker image
-
-```bash
-docker build . -t react-17x-stater:latest
-```
-
-
-## Resources
-
-For starter components. Find out more on [react-16x-starter-components](https://github.com/demonmhon/react-16x-starter-components).
-
- * [Feather Icons](https://github.com/feathericons/feather)
-
-
-## License
-
-[MIT](LICENSE.md)

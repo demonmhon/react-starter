@@ -1,9 +1,0 @@
-{
-  "app": {
-    "defaultLang": "en-US"
-  },
-  "api": {
-    "baseURL": "http://localhost:3301",
-    "version": "latest"
-  }
-}
