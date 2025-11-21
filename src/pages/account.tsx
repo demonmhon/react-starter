@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'
 
-import { BlankPage } from '../components';
+import { BlankPage } from '@/components';
 import { useAuth } from '../contexts/auth-context';
 
 const AccountPage = (props) => {

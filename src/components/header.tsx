@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import logo from '../assets/logo.png'
-import { useAuth } from '../contexts/auth-context'
+import logo from '@/assets/logo.png'
+import { useAuth } from '@/contexts/auth-context'
 
 const Header = () => {
   const { pathname } = useLocation()

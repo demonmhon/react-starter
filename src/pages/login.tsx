@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { BlankPage } from '../components'
+import { BlankPage } from '@/components'
 import { useAuth } from '../contexts/auth-context'
 
 const Login = () => {
