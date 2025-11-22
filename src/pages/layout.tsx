@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Outlet } from 'react-router'
 
 import { useTranslation } from 'react-i18next'
@@ -15,14 +15,29 @@ const Layout = () => {
   const lang = searchParams.get('lang')
   const config = useAppConfigContext()
   const defaultLang = config?.app?.defaultLang
+  const headerRef = useRef<HTMLDivElement>(null)
+  const [paddingTop, setPaddingTop] = useState(0)
 
   useEffect(() => {
-    i18n.changeLanguage(lang)
+    if (lang) i18n.changeLanguage(lang)
   }, [defaultLang, lang])
 
+  useEffect(() => {
+    const updatePadding = () => {
+      if (headerRef.current) {
+        setPaddingTop(headerRef.current.firstElementChild?.clientHeight || 0)
+      }
+    }
+
+    window.addEventListener('resize', updatePadding)
+    updatePadding()
+
+    return () => window.removeEventListener('resize', updatePadding)
+  }, [])
+
   return (
-    <div className={styles.appContainer}>
-      <Header />
+    <div className={styles.appContainer} style={{ paddingTop }}>
+      <div ref={headerRef}><Header /></div>
       <Outlet />
     </div>
   )

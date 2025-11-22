@@ -2,6 +2,9 @@
  * App header
  */
 .appHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--app-header-background);
   display: flex;
   align-items: center;
