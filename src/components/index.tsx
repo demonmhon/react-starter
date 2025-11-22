@@ -1,4 +1,2 @@
-import Header from './header'
-import BlankPage from './blank-page'
-
-export { Header, BlankPage }
+export { default as Header } from './header'
+export { default as BlankPage } from './blank-page'

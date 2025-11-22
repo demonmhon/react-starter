@@ -8,7 +8,7 @@ const Login = () => {
   const location = useLocation()
   const { login } = useAuth()!
 
-  const handleSubmit =  (event: React.FormEvent) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     // In a real app, you'd validate credentials here before calling login.
     login()

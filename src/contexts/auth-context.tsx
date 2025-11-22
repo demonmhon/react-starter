@@ -18,9 +18,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }
 
   const logout = () => {
-    Cookies.remove('isLoggedIn');
-    setIsLoggedIn(false);
-  };
+    Cookies.remove('isLoggedIn')
+    setIsLoggedIn(false)
+  }
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, logout }}>

@@ -1,0 +1,16 @@
+/**
+ * Blank page template
+ */
+.appBlankPage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: block;
+  color: var(--app-blank-page-foreground);
+  font-size: var(--app-blank-page-title-size);
+}

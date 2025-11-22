@@ -10,7 +10,7 @@
     "lint:fix": "eslint ./src --fix",
     "preview": "vite preview",
     "prettier": "prettier --check \"src/**/*.(js|jsx|ts|tsx|css)\"",
-    "prettier:write": "prettier --check \"src/**/*.(js|jsx|ts|tsx|css)\" --write"
+    "format": "prettier --check \"src/**/*.(js|jsx|ts|tsx|css)\" --write"
   },
   "dependencies": {
     "react": "^19.1.1",

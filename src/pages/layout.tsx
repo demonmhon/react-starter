@@ -7,7 +7,9 @@ import { useSearchParams } from 'react-router-dom'
 import { Header } from '@/components'
 import { useAppConfigContext } from '@/contexts/app-config'
 
-const Layout = (props) => {
+import styles from './layout.module.css'
+
+const Layout = () => {
   const { i18n } = useTranslation()
   const [searchParams] = useSearchParams()
   const lang = searchParams.get('lang')
@@ -19,7 +21,7 @@ const Layout = (props) => {
   }, [defaultLang, lang])
 
   return (
-    <div id="app-container">
+    <div className={styles.appContainer}>
       <Header />
       <Outlet />
     </div>
