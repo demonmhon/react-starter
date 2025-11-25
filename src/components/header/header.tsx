@@ -30,11 +30,18 @@ const Header = () => {
         </li>
       </ul>
       <ul className={styles.appMainMenu}>
-        <li className={getNavActiveCssClass('/account')}>
-          <Link to="/account">
-            {t(isLoggedIn ? 'navigation.account' : 'navigation.login')}
-          </Link>
+        <li className={getNavActiveCssClass('/location')}>
+          <Link to="/location">{t('navigation.location')}</Link>
         </li>
+        {isLoggedIn ? (
+          <li className={getNavActiveCssClass('/account')}>
+            <Link to="/account">{t('navigation.account')}</Link>
+          </li>
+        ) : (
+          <li className={getNavActiveCssClass('/login')}>
+            <Link to="/login">{t('navigation.login')}</Link>
+          </li>
+        )}
       </ul>
     </header>
   )

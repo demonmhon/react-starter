@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react'
 
 type AppConfig = Record<string, any> | null
 
@@ -16,9 +22,12 @@ const defaultValue: AppConfigContextValue = {
   reload: () => {},
 }
 
-export const AppConfigContext = createContext<AppConfigContextValue>(defaultValue)
+export const AppConfigContext =
+  createContext<AppConfigContextValue>(defaultValue)
 
-export const AppConfigContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AppConfigContextProvider: React.FC<{
+  children: React.ReactNode
+}> = ({ children }) => {
   const [config, setConfig] = useState<AppConfig>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<Error | null>(null)
@@ -30,7 +39,10 @@ export const AppConfigContextProvider: React.FC<{ children: React.ReactNode }> =
 
     try {
       const response = await fetch('/config.json', { signal })
-      if (!response.ok) throw new Error(`Failed to load config: ${response.status} ${response.statusText}`)
+      if (!response.ok)
+        throw new Error(
+          `Failed to load config: ${response.status} ${response.statusText}`
+        )
       const json = await response.json()
       if (!signal?.aborted) setConfig(json)
     } catch (err) {
@@ -61,5 +73,12 @@ export const AppConfigContextProvider: React.FC<{ children: React.ReactNode }> =
   )
 }
 
-export const useAppConfig = () => useContext(AppConfigContext)
+export const useAppConfig = () => {
+  const context = useContext(AppConfigContext)
+  if (!context) {
+    throw new Error('useAppConfig must be used within a AppConfigContext')
+  }
+  return context
+}
+
 export default AppConfigContextProvider
