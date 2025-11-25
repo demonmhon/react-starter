@@ -24,9 +24,5 @@ const AccountPage = (props) => {
     </BlankPage>
   )
 }
-
-AccountPage.propTypes = {}
-AccountPage.defaultProps = {}
-
-export { AccountPage as HomePage }
+export { AccountPage }
 export default AccountPage

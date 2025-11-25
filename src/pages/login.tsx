@@ -2,8 +2,10 @@ import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { BlankPage } from '@/components'
 import { useAuth } from '../contexts/auth-context'
+import { useAppConfig } from '@/contexts/app-config'
 
 const Login = () => {
+  const { config } = useAppConfig();
   const navigate = useNavigate()
   const location = useLocation()
   const { login } = useAuth()!
@@ -19,7 +21,7 @@ const Login = () => {
 
   return (
     <BlankPage title={`Login`}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>{}
         <div>
           <label htmlFor="username">Username:</label>
           <input type="text" id="username" name="username" />

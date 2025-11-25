@@ -2,7 +2,7 @@
  * App header
  */
 .appHeader {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   background-color: var(--app-header-background);
