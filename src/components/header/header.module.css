@@ -37,7 +37,8 @@
   flex: 1;
 }
 
-.appMainNav li + li {
+.appMainNav li + li,
+.appMainMenu li + li {
   margin-left: 15px;
 }
 
