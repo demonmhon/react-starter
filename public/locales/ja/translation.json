@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "home": "ホーム",
+    "about": "概要",
+    "login": "ログイン",
+    "location": "場所",
+    "account": "アカウント"
+  },
+  "loginPage": {
+    "pageTitle": "ログイン",
+    "field": {
+      "username": "ユーザー名",
+      "password": "パスワード"
+    },
+    "button": {
+      "login": "ログイン",
+      "logout": "ログアウト"
+    }
+  }
+}

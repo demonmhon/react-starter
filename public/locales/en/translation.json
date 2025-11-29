@@ -6,10 +6,15 @@
     "location": "Location",
     "account": "Account"
   },
-  "account": {
-    "fieldUsername": "Username",
-    "fieldPassword": "Password",
-    "buttonLogin": "Login",
-    "buttonLogout": "Logout"
+  "loginPage": {
+    "pageTitle": "Login",
+    "field": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "button": {
+      "login": "Login",
+      "logout": "Logout"
+    }
   }
 }

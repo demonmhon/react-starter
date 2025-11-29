@@ -19,7 +19,7 @@ const AccountPage = (props) => {
   return (
     <BlankPage title={`Account`}>
       <form onSubmit={handleLogout}>
-        <button type="submit">{t('account.buttonLogout')}</button>
+        <button type="submit">{t('loginPage.button.logout')}</button>
       </form>
     </BlankPage>
   )

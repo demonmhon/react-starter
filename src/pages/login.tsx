@@ -36,7 +36,7 @@ const Login = () => {
           <input type="password" id="password" name="password" />
         </div>
         <br />
-        <button type="submit">{t('loginPage.button.submit')}</button>
+        <button type="submit">{t('loginPage.button.login')}</button>
       </form>
     </BlankPage>
   )

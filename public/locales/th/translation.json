@@ -3,13 +3,18 @@
     "home": "หน้าแรก",
     "about": "เกี่ยวกับ",
     "login": "ล็อกอิน",
-    "location": "เลือกโลเคชั่น",
+    "location": "โลเคชั่น",
     "account": "บัญชี"
   },
-  "account": {
-    "fieldUsername": "Username",
-    "fieldPassword": "Password",
-    "buttonLogin": "Login",
-    "buttonLogout": "Logout"
+  "loginPage": {
+    "pageTitle": "เข้าสู่ระบบ",
+    "field": {
+      "username": "ชื่อผู้ใช้",
+      "password": "รหัสผ่าน"
+    },
+    "button": {
+      "login": "เข้าสู่ระบบ",
+      "logout": "ออกจากระบบ"
+    }
   }
 }
