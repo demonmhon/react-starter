@@ -11,7 +11,7 @@
   justify-content: space-between;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .appHeader a {
@@ -48,6 +48,7 @@
   margin-bottom: 1rem;
 }
 
+/* Buttons */
 .appMainNavToggleBtn::before {
   background-image: url('/icons/menu.svg');
 }
@@ -95,14 +96,9 @@
     bottom: 0;
     background-color: #fff;
     flex-direction: column;
-    padding: 1.25rem;
+    padding: 0.5rem 1rem;
     transition: left 0.275s ease-in-out;
-    z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  }
-
-  .appMainNavContainer.open {
-    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
 
   .appMainNav {
@@ -122,12 +118,18 @@
 
 /* Desktop styles */
 @media (min-width: 768px) {
+
   .appMainNavToggleBtn,
   .appMainNavCloseBtn {
     display: none;
   }
+
   .appMainNav li {
     display: block;
+  }
+
+  [data-mobile-nav-open="true"] .navOverlay {
+    display: none;
   }
 }
 
@@ -172,9 +174,33 @@
   height: 1rem;
   vertical-align: middle;
 }
+
 .locationLink::before {
   background-image: url('/icons/globe.svg');
 }
+
 .loginLink::before {
   background-image: url('/icons/user.svg');
+}
+
+.navOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  transition-property: opacity left;
+  transition: opacity 0.275s ease-in-out;
+  opacity: 0;
+}
+
+[data-mobile-nav-open="true"] .appMainNavContainer {
+  left: 0;
+}
+
+[data-mobile-nav-open="true"] .navOverlay {
+  opacity: 0.5;
+  right: 0;
 }

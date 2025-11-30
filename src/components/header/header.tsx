@@ -20,11 +20,15 @@ const Header = () => {
     setIsNavOpen(!isNavOpen)
   }
 
+  const closeNav = () => {
+    setIsNavOpen(false)
+  }
+
   return (
-    <header className={styles.appHeader}>
+    <header className={styles.appHeader} data-mobile-nav-open={isNavOpen}>
       <span className={styles.appHeaderLogo}>
-        <button 
-          className={styles.appMainNavToggleBtn} 
+        <button
+          className={styles.appMainNavToggleBtn}
           aria-label="Toggle navigation menu"
           onClick={toggleNav}
         >
@@ -34,10 +38,15 @@ const Header = () => {
           <img src={logo} alt="logo" />
         </Link>
       </span>
-      <div className={`${styles.appMainNavContainer} ${isNavOpen ? styles.open : ''}`}>
+      <div
+        className={styles.navOverlay}
+        onClick={closeNav}
+        aria-label="Close navigation"
+      />
+      <div className={`${styles.appMainNavContainer}`}>
         <div className={styles.mobileNavButton}>
-          <button 
-            className={styles.appMainNavCloseBtn} 
+          <button
+            className={styles.appMainNavCloseBtn}
             aria-label="Close navigation menu"
             onClick={toggleNav}
           >
@@ -46,10 +55,10 @@ const Header = () => {
         </div>
         <ul className={styles.appMainNav}>
           <li className={getNavActiveCssClass('/')}>
-            <Link to="/" onClick={() => setIsNavOpen(false)}>{t('navigation.home')}</Link>
+            <Link to="/" onClick={closeNav}>{t('navigation.home')}</Link>
           </li>
           <li className={getNavActiveCssClass('/about')}>
-            <Link to="/about" onClick={() => setIsNavOpen(false)}>{t('navigation.about')}</Link>
+            <Link to="/about" onClick={closeNav}>{t('navigation.about')}</Link>
           </li>
         </ul>
       </div>
