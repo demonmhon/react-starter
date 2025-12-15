@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -23,6 +23,20 @@ const Header = () => {
   const closeNav = () => {
     setIsNavOpen(false)
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeNav()
+      }
+    }
+
+    if (isNavOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+    }
+
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isNavOpen])
 
   return (
     <header className={styles.appHeader} data-mobile-nav-open={isNavOpen}>
