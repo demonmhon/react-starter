@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 
 import Layout from './pages/layout'
 import Pages from './pages'
@@ -22,13 +22,16 @@ const AppRouter = () => {
           }
         />
         <Route
-          path="/account"
           element={
             <ProtectedRoute>
-              <Pages.Account />
+              <Outlet />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route path="/dashboard" element={<Pages.Dashboard />} />
+          <Route path="/dashboard/:id" element={<Pages.Dashboard />} />
+          <Route path="/account" element={<Pages.Account />} />
+        </Route>
         <Route path="/404" element={<Pages.Error404 />} />
         <Route path="*" element={<Navigate replace to="/404" />} />
       </Route>

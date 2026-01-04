@@ -4,6 +4,7 @@
     "about": "About",
     "login": "Login",
     "location": "Location",
+    "dashboard": "Dashboard",
     "account": "Account"
   },
   "loginPage": {

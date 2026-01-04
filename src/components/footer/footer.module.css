@@ -3,4 +3,5 @@
   text-align: center;
   margin-top: auto;
   font-size: 0.85rem;
+  background-color: var(--app-footer-background);
 }

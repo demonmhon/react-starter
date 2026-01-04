@@ -71,6 +71,11 @@ const Header = () => {
           <li className={getNavActiveCssClass('/')}>
             <Link to="/" onClick={closeNav}>{t('navigation.home')}</Link>
           </li>
+          {isLoggedIn ? (
+          <li className={getNavActiveCssClass('/dashboard')}>
+            <Link to="/dashboard" onClick={closeNav}>{t('navigation.dashboard')}</Link>
+          </li>
+        ) : undefined}
           <li className={getNavActiveCssClass('/about')}>
             <Link to="/about" onClick={closeNav}>{t('navigation.about')}</Link>
           </li>
