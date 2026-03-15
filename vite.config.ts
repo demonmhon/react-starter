@@ -1,14 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig, esmExternalRequirePlugin } from 'vite'
 import path from 'node:path'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler']],
-      },
+     esmExternalRequirePlugin({
+      external: ['react', /^node:/],
     }),
   ],
   resolve: {
