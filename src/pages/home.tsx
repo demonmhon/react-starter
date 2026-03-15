@@ -1,4 +1,4 @@
-import { BlankPage } from '../components'
+import { BlankPage } from '@/components'
 
 const HomePage = () => {
   return <BlankPage title={`React 19x Starter`} />

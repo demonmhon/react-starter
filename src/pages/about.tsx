@@ -1,5 +1,5 @@
 import React from 'react'
-import { BlankPage } from '../components'
+import { BlankPage } from '@/components'
 
 const AboutPage = () => {
   return <BlankPage title={`About`} />
