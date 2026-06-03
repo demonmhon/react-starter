@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { BlankPage } from '@/components'
 import { useAuth } from '../contexts/auth-context'
 
-const AccountPage = (props) => {
+const AccountPage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
   const { logout } = useAuth()!

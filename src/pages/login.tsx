@@ -4,10 +4,8 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { BlankPage } from '@/components'
 import { useAuth } from '../contexts/auth-context'
-import { useAppConfig } from '@/contexts/app-config'
 
 const Login = () => {
-  const { config } = useAppConfig()
   const navigate = useNavigate()
   const location = useLocation()
   const { t } = useTranslation()

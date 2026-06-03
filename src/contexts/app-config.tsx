@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from 'react'
 
-type AppConfig = Record<string, any> | null
+type AppConfig = Record<string, unknown> | unknown
 
 type AppConfigContextValue = {
   config: AppConfig
@@ -22,6 +22,7 @@ const defaultValue: AppConfigContextValue = {
   reload: () => {},
 }
 
+/* eslint-disable-next-line react-refresh/only-export-components */
 export const AppConfigContext =
   createContext<AppConfigContextValue>(defaultValue)
 
@@ -46,7 +47,7 @@ export const AppConfigContextProvider: React.FC<{
       const json = await response.json()
       if (!signal?.aborted) setConfig(json)
     } catch (err) {
-      if ((err as any).name === 'AbortError') {
+      if ((err as Error).name === 'AbortError') {
         return
       }
       setError(err as Error)
@@ -73,6 +74,7 @@ export const AppConfigContextProvider: React.FC<{
   )
 }
 
+/* eslint-disable-next-line react-refresh/only-export-components */
 export const useAppConfig = () => {
   const context = useContext(AppConfigContext)
   if (!context) {

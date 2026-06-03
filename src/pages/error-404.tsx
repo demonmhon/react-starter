@@ -2,7 +2,7 @@ import React from 'react'
 
 import { BlankPage } from '@/components'
 
-const Error404Page = (props) => {
+const Error404Page = () => {
   return <BlankPage title={`Error 404`} />
 }
 
