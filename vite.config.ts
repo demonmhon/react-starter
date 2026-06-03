@@ -5,7 +5,7 @@ import path from 'node:path'
 export default defineConfig({
   plugins: [
      esmExternalRequirePlugin({
-      external: ['react', /^node:/],
+      external: [/^node:/],
     }),
   ],
   resolve: {
