@@ -11,7 +11,9 @@
   justify-content: space-between;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .appHeader a {
@@ -98,12 +100,14 @@
     flex-direction: column;
     padding: 0.5rem 1rem;
     transition: left 0.275s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow:
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
 
   .appMainNav {
     flex-direction: column;
-    gap: 0.5rem
+    gap: 0.5rem;
   }
 
   .appMainNav li {
@@ -118,7 +122,6 @@
 
 /* Desktop styles */
 @media (min-width: 768px) {
-
   .appMainNavToggleBtn,
   .appMainNavCloseBtn {
     display: none;
@@ -128,7 +131,7 @@
     display: block;
   }
 
-  [data-mobile-nav-open="true"] .navOverlay {
+  [data-mobile-nav-open='true'] .navOverlay {
     display: none;
   }
 }
@@ -196,11 +199,11 @@
   opacity: 0;
 }
 
-[data-mobile-nav-open="true"] .appMainNavContainer {
+[data-mobile-nav-open='true'] .appMainNavContainer {
   left: 0;
 }
 
-[data-mobile-nav-open="true"] .navOverlay {
+[data-mobile-nav-open='true'] .navOverlay {
   opacity: 0.5;
   right: 0;
 }

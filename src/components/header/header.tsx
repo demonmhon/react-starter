@@ -69,28 +69,48 @@ const Header = () => {
         </div>
         <ul className={styles.appMainNav}>
           <li className={getNavActiveCssClass('/')}>
-            <Link to="/" onClick={closeNav}>{t('navigation.home')}</Link>
+            <Link to="/" onClick={closeNav}>
+              {t('navigation.home')}
+            </Link>
           </li>
           {isLoggedIn ? (
-          <li className={getNavActiveCssClass('/dashboard')}>
-            <Link to="/dashboard" onClick={closeNav}>{t('navigation.dashboard')}</Link>
-          </li>
-        ) : undefined}
+            <li className={getNavActiveCssClass('/dashboard')}>
+              <Link to="/dashboard" onClick={closeNav}>
+                {t('navigation.dashboard')}
+              </Link>
+            </li>
+          ) : undefined}
           <li className={getNavActiveCssClass('/about')}>
-            <Link to="/about" onClick={closeNav}>{t('navigation.about')}</Link>
+            <Link to="/about" onClick={closeNav}>
+              {t('navigation.about')}
+            </Link>
           </li>
         </ul>
       </div>
       <ul className={styles.appMainMenu}>
-        <li className={[getNavActiveCssClass('/location'), styles.locationLink].join(' ')}>
+        <li
+          className={[
+            getNavActiveCssClass('/location'),
+            styles.locationLink,
+          ].join(' ')}
+        >
           <Link to="/location">{t('navigation.location')}</Link>
         </li>
         {isLoggedIn ? (
-          <li className={[getNavActiveCssClass('/account'), styles.loginLink].join(' ')}>
+          <li
+            className={[
+              getNavActiveCssClass('/account'),
+              styles.loginLink,
+            ].join(' ')}
+          >
             <Link to="/account">{t('navigation.account')}</Link>
           </li>
         ) : (
-          <li className={[getNavActiveCssClass('/login'), styles.loginLink].join(' ')}>
+          <li
+            className={[getNavActiveCssClass('/login'), styles.loginLink].join(
+              ' '
+            )}
+          >
             <Link to="/login">{t('navigation.login')}</Link>
           </li>
         )}
