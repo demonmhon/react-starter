@@ -1,8 +1,8 @@
 import React from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Navigate, useLocation, Outlet } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+const ProtectedRoute = ({ children }: { children?: React.ReactNode }) => {
   const location = useLocation()
   const isLoggedIn = Cookies.get('isLoggedIn')
 
@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     return <Navigate to="/login" state={{ from: location }} replace />
   }
 
-  return children
+  return children || <Outlet />
 }
 
 export default ProtectedRoute

@@ -1,24 +1,22 @@
-import React, { useEffect } from 'react'
-
-import Route from './route'
 import { AppConfigContextProvider } from '@/contexts/app-config'
-import { AuthProvider } from '@/contexts/auth-context'
 import { LanguageProvider } from '@/contexts/language-context'
+import { AuthProvider } from '@/contexts/auth-context'
+import AppRouter from './routes/app-route'
 
-const App = () => {
-  useEffect(() => {}, [])
+const AppProviders = ({ children }: { children: React.ReactNode }) => (
+  <AppConfigContextProvider>
+    <LanguageProvider>
+      <AuthProvider>{children}</AuthProvider>
+    </LanguageProvider>
+  </AppConfigContextProvider>
+)
 
+export const App = () => {
   return (
-    <AppConfigContextProvider>
-      <LanguageProvider>
-        <AuthProvider>
-          <Route />
-        </AuthProvider>
-      </LanguageProvider>
-    </AppConfigContextProvider>
+    <AppProviders>
+      <AppRouter />
+    </AppProviders>
   )
 }
-
-export { App }
 
 export default App

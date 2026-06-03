@@ -6,7 +6,7 @@ import Login from './login'
 import Location from './location'
 import Error404 from './error-404'
 
-const Pages = {
+export const Pages = {
   Home,
   About,
   Account,

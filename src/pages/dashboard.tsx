@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+
 import { BlankPage } from '@/components'
 
 import styles from './dashboard.module.css'
@@ -16,15 +17,19 @@ const DashboardPage = () => {
   const renderItem = (itemId: string) => {
     return (
       <>
-        <div className={styles.dashboardItem}>Detailed view for Dashboard ID: {itemId}</div>
+        <div className={styles.dashboardItem}>
+          Detailed view for Dashboard ID: {itemId}
+        </div>
         <a href="/dashboard">Back to Dashboard List</a>
       </>
     )
   }
 
-  return <BlankPage title={`Dashboard`}>
-    {id ? renderItem(id) : renderList()}
-  </BlankPage>
+  return (
+    <BlankPage title={`Dashboard`}>
+      {id ? renderItem(id) : renderList()}
+    </BlankPage>
+  )
 }
 
 export { DashboardPage }
